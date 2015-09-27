@@ -1,0 +1,36 @@
+{
+  "name": "spellchecker_ptbr",
+  "version": "0.1.0",
+  "description": "A spell checker for brazilian portuguese (pt-BR). Checks whole sentences / chunks of text for errors and returns positions and suggestions for each. This module is built on top of nodehun and nodehun-sentences that are amazing node modules that exposes Hunspell features. Hunspell is a first class spellcheck library used by Google, Apple, and Mozilla.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leandrodvd/spellchecker_ptbr.git"
+  },
+  "keywords": [
+    "spellchecker",
+    "corretor",
+    "ortografico",
+    "ortografia",
+    "spell",
+    "portuguese",
+    "pt-br",
+    "spell",
+    "checker",
+    "ortography"
+  ],
+  "author": "Leandro David <leandrodvd@gmail.com> (http://leandrodavid.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leandrodvd/spellchecker_ptbr/issues"
+  },
+  "homepage": "https://github.com/leandrodvd/spellchecker_ptbr#readme",
+  "dependencies": {
+    "nodehun": "^2.0.8",
+    "nodehun-sentences": "^1.0.1",
+    "path": "^0.12.7"
+  }
+}
