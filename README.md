@@ -31,4 +31,4 @@ A npm module that executes spell check using a pt-BR dictionary. It relies on no
 
 ## Release History
 
-* 0.1.0 Initial release
+* 0.1.2 Initial release
