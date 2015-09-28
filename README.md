@@ -28,7 +28,17 @@ A npm module that executes spell check using a pt-BR dictionary. It relies on no
 			console.log(typos);
 		}
 	);
+	
+	spellchecker.spellcheckCountArray(["O rato roeu a routa do rei de romaa","iço estah errrado"],
+		function(err,errorsCount){
+			if (err) {
+				console.error("spellcheckCountArray-Ocorreu um erro "+err);
+			}
+			console.log("spellcheckCountArray-Total de erros encontrados:"+errorsCount);
+		}
+	);
 
 ## Release History
 
 * 0.1.2 Initial release
+* 0.1.3 Added spellcheckCountArray

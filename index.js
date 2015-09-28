@@ -1,4 +1,3 @@
-//init spellchecker
 var fs = require('fs');
 var path = require('path')
 
@@ -10,8 +9,8 @@ var hunspell = new nodehun(
 		fs.readFileSync(dic+'/pt_BR.aff'),
 		fs.readFileSync(dic+'/pt_BR.dic')
 );
-	
-	
+//uses async to the spell check on multiple entries at a time(like in spellcheckCountArray function)
+async = require("async");
 	
 	
 
@@ -27,6 +26,7 @@ module.exports = {
 		spellchecker(hunspell, sentence, function(err, typos) {
 			if (err) {
 				callback(err);
+				return;
 			}
 			if(typeof callback === 'function'){
 				callback(null,typos);
@@ -39,6 +39,7 @@ module.exports = {
 		spellchecker(hunspell, sentence, function(err, typos) {
 			if (err) {
 				callback(err);
+				return;
 			}
 			if(typeof callback === 'function'){
 				callback(null,typos.length);
@@ -46,6 +47,38 @@ module.exports = {
 		
 		});
 	
+	},
+	spellcheckCountArray: function (items,callback){
+		if (!Array.isArray(items)){
+			callback(new Error("The object provided is not an Array"));
+			return;
+		}
+		var count=0;
+		var iterator=function(item,iteratorCallback){
+			spellchecker(hunspell, item, function(err, typos) {
+				if (err) {
+					iteratorCallback(err);
+					return;
+				}
+				//add typos count for this item
+				count+=typos.length;
+				//finished - call iteratorCallback
+				iteratorCallback();
+			});
+		}
+		var finalCallback=function(err){
+			if(err){
+				callback(err);
+				return;
+			}
+			callback(null,count);
+		};
+		async.each(
+			items,
+			iterator,
+			finalCallback		
+		);
+			
 	}
 };
 
