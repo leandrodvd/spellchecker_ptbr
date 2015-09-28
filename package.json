@@ -1,6 +1,6 @@
 {
   "name": "spellchecker_ptbr",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "description": "A spell checker for brazilian portuguese (pt-BR). Checks whole sentences / chunks of text for errors and returns positions and suggestions for each. This module is built on top of nodehun and nodehun-sentences that are amazing node modules that exposes Hunspell features. Hunspell is a first class spellcheck library used by Google, Apple, and Mozilla.",
   "main": "index.js",
   "scripts": {
