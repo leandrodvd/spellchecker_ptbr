@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/leandrodvd/spellchecker_ptbr#readme",
   "dependencies": {
+    "async": "^1.4.2",
     "nodehun": "^2.0.8",
     "nodehun-sentences": "^1.0.1",
     "path": "^0.12.7"
