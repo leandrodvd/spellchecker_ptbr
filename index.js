@@ -6,8 +6,8 @@ var dic = path.join(path.dirname(fs.realpathSync(__filename)), '/dic');
 var spellchecker = require('nodehun-sentences');
 var nodehun = require('nodehun');
 var hunspell = new nodehun(
-		fs.readFileSync(dic+'/pt_BR.aff'),
-		fs.readFileSync(dic+'/pt_BR.dic')
+		fs.readFileSync(dic+'/pt_BR_UTF8.aff'),
+		fs.readFileSync(dic+'/pt_BR_UTF8.dic')
 );
 //uses async to the spell check on multiple entries at a time(like in spellcheckCountArray function)
 async = require("async");
